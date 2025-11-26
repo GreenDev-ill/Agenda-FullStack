@@ -1,0 +1,218 @@
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.cliente-list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cliente-header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+:root{
+    --page-bg: #eef2f7;
+    --surface: #ffffff;
+    --muted: #2f3b45;
+    --border: #e3e7eb;
+    --accent: #2a9df4;
+    --radius: 10px;
+    --gap: 12px;
+}
+
+/* overall wrapper to match login page layout */
+.auth-wrapper{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background-color: var(--page-bg);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--muted);
+}
+
+/* card like the login box */
+.card{
+    width: 100%;
+    max-width: 640px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: 0 6px 18px rgba(20,30,40,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+/* header area */
+.card-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* compact avatar / icon used next to titles */
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7fd0ff);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* body content layout */
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* consistent inputs like login page */
+.input, input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #f7f9fb;
+    color: var(--muted);
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input:focus, input:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 6px 16px rgba(42,157,244,0.08);
+}
+
+/* action buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid transparent;
+}
+
+/* small helper areas */
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.note {
+    font-size: 13px;
+    color: #6b7785;
+}
+
+/* responsive tweaks */
+@media (max-width: 520px){
+    .card{ padding: 14px; }
+    .avatar{ width: 40px; height: 40px; }
+    .card-head{ font-size: 14px; }
+}
+.cliente {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cliente label {
+    font-size: 14px;
+    color: #333;
+}
+.cliente .actions {
+    display: flex;
+    gap: 10px
+}
+.cliente .actions button {
+    background-color: #ddd;
+    color: black;
+    padding: 5px 10px;
+}
+
+.header {
+    justify-content: space-around;
+}
+
+.form {
+    margin: 0px auto;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: black;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        div {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                background-color: rgb(235, 235, 235);
+                border: none;
+                border-radius: 5px;
+                padding: 3px;
+                color: black;
+            }
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            button {
+                padding: 5px;
+            }
+        }
+
+    }
+}
