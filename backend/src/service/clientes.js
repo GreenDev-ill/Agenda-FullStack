@@ -72,10 +72,10 @@ class ServiceCliente {
         }
         
         //criar o token
-        return jwt.sign(
+        return {idLogin: cliente.id, nomeLogin: cliente.nome, token: jwt.sign(
             { id: cliente.id, nome: cliente.nome },
             JWT_SEGREDO,
             { expiresIn: 60 * 60 }
-        )
+        )}
     }
 } export default new ServiceCliente()

@@ -33,9 +33,9 @@ export default function UpdateAtendimento() {
         e.preventDefault()
         // Alterada função pra update
         const response = await updateAtendimento(prevAtendimento.id, atendimento)
-
+        toast ("Concluido?: " + atendimento.concluido)
         if (response.status === 200) {
-            navigate('/atendimentos')
+            navigate('/')
             toast("Atendimento alterado com sucesso")
         } else {
             toast("Erro ao alterar Atendimento")
@@ -65,7 +65,10 @@ export default function UpdateAtendimento() {
                 </div>
                 <div>
                     <label>Concluído: </label>
-                    <input type="checkbox" name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}/>
+                    <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}>
+                        <option value={1}>Concluído</option>
+                        <option value={0}>Não Concluído</option>
+                    </select>
                 </div>
                 <button type="reset" onClick={handleReset}>Limpar</button>
                 <button type="submit" onClick={handleSave}>Enviar</button>

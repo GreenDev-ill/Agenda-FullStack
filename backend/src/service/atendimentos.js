@@ -8,7 +8,10 @@ const JWT_SEGREDO = "a-string-secret-at-least-256-bits-long"
 
 class ServiceAtendimento {
     
-    async FindAll(){
+    async FindAll(idCliente){    //quando uma função tem uma promise (usa await), tem que usar o async
+        return Atendimento.findAll({where: {clienteID: idCliente}})
+    }
+    async FindTudo(){    //quando uma função tem uma promise (usa await), tem que usar o async
         return Atendimento.findAll()
     }
     async Find(id){    //quando uma função tem uma promise (usa await), tem que usar o async
@@ -21,12 +24,12 @@ class ServiceAtendimento {
         }
         return atendimento
     }
-    async Create(dia, hora, valor){
-        if(!dia || !hora || !valor){
+    async Create(dia, hora, valor, concluido, clienteID){
+        if(!dia || !hora || !valor || !clienteID){
             throw new Error("Favor preencher todos os campos.")
         }
 
-        await Atendimento.create({dia, hora, valor})
+        await Atendimento.create({dia, hora, valor, concluido, clienteID})
     }
     async Update(id, dia, hora, valor, concluido){
         if (!id){
@@ -39,6 +42,7 @@ class ServiceAtendimento {
             atendimento.dia = dia
             atendimento.hora = hora
             atendimento.valor = valor
+            atendimento.concluido = concluido
             await atendimento.save()
         }
         

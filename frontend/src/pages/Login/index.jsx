@@ -5,9 +5,11 @@ import { AuthContext } from '../../auth/Context';
 import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 
+export var LoginClienteID, LoginClienteNome;
 
 export default function Login() {
-  const { login }= useContext(AuthContext)
+  const { login } = useContext(AuthContext)
+  
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
@@ -21,8 +23,10 @@ export default function Login() {
     try {
       const response = await loginCliente(email,senha)
       login(response.data.token)
-      navigate('/clientes')
-      toast("Login do cliente realizado com sucesso.")
+      LoginClienteID = response.data.idLogin;
+      LoginClienteNome = response.data.nomeLogin;
+      navigate('/')
+      toast("Login do cliente " + response.data.nomeLogin + " realizado com sucesso.")
       console.log("Token: " + response.data.token)
     } catch (error) {
       toast("Erro no login: " + error)

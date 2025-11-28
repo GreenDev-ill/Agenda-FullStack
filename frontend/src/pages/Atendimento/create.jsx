@@ -2,6 +2,8 @@ import {useState} from "react"
 import { createAtendimento } from "../../api/atendimentos";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { LoginClienteID } from "../Login";
+
 const INITIAL_STATE = {
         dia: '',
         hora:'',
@@ -23,10 +25,12 @@ export default function CreateAtendimento(){
         
         e.preventDefault() // barra o envio automatico
         try {
+            atendimento.clienteID = LoginClienteID
+            atendimento.concluido = 0
             const response = await createAtendimento(atendimento)
             if(response.status == 201){
                 toast("Atendimento criado com sucesso.")
-                navigate('/atendimentos') 
+                navigate('/') 
             }
         } catch (error) {
             toast("Erro ao criar atendimento.")
@@ -54,10 +58,13 @@ export default function CreateAtendimento(){
                     <label>Valor: </label>
                     <input type="text" name="valor" id="valor" value={atendimento.valor} onChange={handlChange}/>
                 </div>
-                <div>
+                {/* <div>
                     <label>Concluído: </label>
-                    <input type="checkbox" name="concluido" id="concluido" value={atendimento.concluido} onChange={handlChange}/>
-                </div>
+                    <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handlChange}>
+                        <option value={1}>Concluído</option>
+                        <option value={0}>Não Concluído</option>
+                    </select>
+                </div> */}
                 <button type="reset" onClick={handleReset}>Limpar</button>
                 <button type="submit" onClick={handleSave}>Enviar</button>
             </form>

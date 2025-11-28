@@ -14,6 +14,8 @@ import UpdateCliente from "./pages/Clientes/update.jsx";
 import Atendimentos from "./pages/Atendimento/index.jsx";
 import UpdateAtendimento from "./pages/Atendimento/update.jsx"; 
 import CreateAtendimento from "./pages/atendimento/create.jsx";
+import ListaAtendimentos from "./pages/Atendimento/allcontent.jsx";
+import About from "./pages/About/index.jsx"
 
 function App() {
 
@@ -22,10 +24,12 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
           <Route path='/login' element={<Login />} />
           <Route path='/create/cliente' element={<CreateCliente/>}/>
 
            <Route element={<PrivateRoute />}>
+           <Route path='/atendimentos/todos' element={<ListaAtendimentos />} />
             <Route path='/clientes' element={<Clientes/>}/>
             <Route path='/update/cliente' element={<UpdateCliente />} />
             <Route path='/create/atendimento' element={<CreateAtendimento />} />

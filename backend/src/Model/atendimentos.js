@@ -11,7 +11,15 @@ class Atendimento {
             dia:{type: database.db.Sequelize.STRING},
             hora:{type: database.db.Sequelize.STRING},
             valor:{type: database.db.Sequelize.STRING},
-            concluido:{type: database.db.Sequelize.BOOLEAN},
+            concluido:{type: database.db.Sequelize.TINYINT},
+            clienteID:{type: database.db.Sequelize.INTEGER,
+                references: {
+                    model: 'clientes', // nome da tabela referenciada
+                    CONSTRAINT: 'FK_Atendimentos_Clientes',
+                    key: 'id',          // coluna da tabela referenciada
+                    References: 'clientes'
+                }
+            }
         })
     }
 } export default new Atendimento().model

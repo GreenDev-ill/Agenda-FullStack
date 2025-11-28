@@ -6,21 +6,19 @@ function Home(){
     return(
         <>
             <main>
-                <div><h1> Agenda Full Stack </h1>
+
                   <div>
-                    <p>Projeto Fullstack - Agenda Full Stack Api</p>
-                    <p>Bibliotecas front-end:</p>
+                    <h2> Sistema de agendamento para clientes </h2>
+                    <h3>Objetivo:</h3>
                     <ul>
-                      <li>Axios;</li>
-                      <li>JWT Decode;</li>
-                      <li>React, React router dom;</li>
-                      <li>React toastify.</li>
+                      <li>Aplicação web para atendimentos de clientes</li>
+                      <li>Cada cliente pode criar seu próprio login para criar seus atendimentos</li>
+                      <li>Clientes só podem criar atendimentos se estiverem logados</li>
+                      <li>Clientes só podem acessar,alterar ou deletar seus próprios atendimentos criados</li>
                     </ul>
-                  </div>
-                </div>
+                    </div>
             </main>
         </>
     )
 }
-
 export default Home

@@ -26,7 +26,7 @@ export default function CreateCliente(){
             const response = await createCliente(cliente)
             if(response.status == 201){
                 toast("Cliente criado com sucesso.")
-                navigate('/clientes') 
+                navigate('/') 
             }
         } catch (error) {
             toast("Erro ao criar cliente.")

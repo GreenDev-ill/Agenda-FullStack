@@ -56,8 +56,8 @@ class ControllerCliente{
     async Login(req,res){
         try {
             const { email, senha } = req.body      
-            const token = await ServiceCliente.Login(email, senha)    
-            res.status(200).send({ token })  
+            const {idLogin, nomeLogin, token} = await ServiceCliente.Login(email, senha)    
+            res.status(200).send({ idLogin, nomeLogin, token })  
         } catch (error) {
             res.status(500).send({error: error.message})
         }
