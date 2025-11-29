@@ -6,12 +6,15 @@ class Database{
     }
     init() {
         // .env - dotenv - opção avançada para configurar db
-        this.db = new Sequelize({
-            database: 'agenda',
-            host: 'localhost',
-            username: 'root',
-            password: '',
-            dialect: 'mysql'
-        })
+        this.db = new Sequelize(process.env.DATABASE_URL, {
+                    dialect: 'postgres', // <--- Mudou de 'mysql' para 'postgres'
+                    protocol: 'postgres',
+                    dialectOptions: {
+                    ssl: {
+                    require: true,
+                    rejectUnauthorized: false // <--- OBRIGATÓRIO no Render
+                    }
+            }
+        });
     }
 } export default new Database()
