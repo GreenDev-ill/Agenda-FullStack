@@ -1,7 +1,7 @@
 import './style.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { loginCliente } from '../../api/clientes';
-import { AuthContext } from '../../auth/Context';
+import { AuthContext } from '../../auth/context';
 import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 

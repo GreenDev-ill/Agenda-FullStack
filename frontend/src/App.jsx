@@ -6,7 +6,7 @@ import Login from "./pages/Login/index.jsx"
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import { AuthProvider } from "./auth/Context.jsx";
+import { AuthProvider } from "./auth/context.jsx";
 import PrivateRoute from "./router/PrivateRoute.jsx";
 import CreateCliente from "./pages/Clientes/create.jsx";
 import Clientes from "./pages/Clientes/index.jsx";

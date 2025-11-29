@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import './style.css'
-import { AuthContext } from '../../auth/Context'
+import { AuthContext } from '../../auth/context'
 import { useContext } from 'react'
 import { LoginClienteNome } from '../../pages/Login'
 
