@@ -11,7 +11,7 @@ class Atendimento {
             dia:{type: database.db.Sequelize.STRING},
             hora:{type: database.db.Sequelize.STRING},
             valor:{type: database.db.Sequelize.STRING},
-            concluido:{type: database.db.Sequelize.TINYINT},
+            concluido:{type: database.db.Sequelize.BOOLEAN},
             clienteID:{type: database.db.Sequelize.INTEGER,
                 references: {
                     model: 'clientes', // nome da tabela referenciada
