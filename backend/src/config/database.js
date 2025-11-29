@@ -8,6 +8,10 @@ class Database{
         // .env - dotenv - opção avançada para configurar db
         this.db = new Sequelize(process.env.DATABASE_URL, {
                     dialect: 'postgres', // <--- Mudou de 'mysql' para 'postgres'
+                    database: 'agenda_9igy',
+                    username: 'agenda_9igy_user',
+                    password: 'Deorcq2PF64KqNTPhW03HDRM23WpUiId',
+                    host: 'dpg-d4l3ca2li9vc73e2n300-a',
                     protocol: 'postgres',
                     dialectOptions: {
                     ssl: {
