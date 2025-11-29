@@ -66,8 +66,8 @@ export default function UpdateAtendimento() {
                 <div>
                     <label>Concluído: </label>
                     <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}>
-                        <option value={1}>Concluído</option>
-                        <option value={0}>Não Concluído</option>
+                        <option value={true}>Concluído</option>
+                        <option value={false}>Não Concluído</option>
                     </select>
                 </div>
                 <button type="reset" onClick={handleReset}>Limpar</button>
