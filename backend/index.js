@@ -12,7 +12,7 @@ app.use(express.json())
 //rotas
 app.use('/api/v1', router)
 
-const port = 3000
+const port = 5432
 
 database.db
     .sync({ force:false })          // forçar para nos testes dropar o banco e criar um novo com base no Model
