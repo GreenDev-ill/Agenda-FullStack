@@ -6,7 +6,7 @@ class Database{
     }
     init() {
         // .env - dotenv - opção avançada para configurar db
-        this.db = new Sequelize(process.env.DATABASE_URL, {
+        this.db = new Sequelize({
                     dialect: 'postgres', // <--- Mudou de 'mysql' para 'postgres'
                     database: 'agenda_9igy',
                     username: 'agenda_9igy_user',
