@@ -13,7 +13,7 @@ import Clientes from "./pages/Clientes/index.jsx";
 import UpdateCliente from "./pages/Clientes/update.jsx";
 import Atendimentos from "./pages/Atendimento/index.jsx";
 import UpdateAtendimento from "./pages/Atendimento/update.jsx"; 
-import CreateAtendimento from "./pages/atendimento/create.jsx";
+import CreateAtendimento from "./pages/Atendimento/create.jsx";
 import ListaAtendimentos from "./pages/Atendimento/allcontent.jsx";
 import About from "./pages/About/index.jsx"
 
