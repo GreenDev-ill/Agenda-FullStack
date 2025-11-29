@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://agenda-fullstack-qyic.onrender.com"
+    baseURL: "http://agenda-fullstack-qyic.onrender.com"
 })
 
 api.interceptors.request.use(
